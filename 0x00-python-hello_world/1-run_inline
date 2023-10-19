@@ -1,2 +1,11 @@
-#!/bin/bash
-python3 <<< $PYCODE
+#!/usr/bin/python3
+
+import os
+
+# Get the Python code from the PYCODE environment variable
+pycode = os.environ.get("PYCODE")
+
+if pycode:
+	exec(pycode)
+else:
+	print("Error: PYCODE environment variable is not set.")
